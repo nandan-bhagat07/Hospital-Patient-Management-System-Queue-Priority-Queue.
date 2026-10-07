@@ -1,0 +1,201 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hospital Patient Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            🏥 MediCare Hospital
+        </div>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#add-patient">Add Patient</a>
+            <a href="#queue">Queue</a>
+        </nav>
+    </header>
+
+
+    <!-- Main Container -->
+    <main>
+
+        <!-- Dashboard -->
+        <section id="dashboard" class="dashboard">
+
+            <div class="welcome">
+                <h1>Hospital Patient Management System</h1>
+                <p>Manage patients using Queue & Priority Queue</p>
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Total Patients</h3>
+                    <p id="totalPatients">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Waiting Patients</h3>
+                    <p id="waitingPatients">0</p>
+                </div>
+
+                <div class="card emergency-card">
+                    <h3>Emergency</h3>
+                    <p id="emergencyPatients">0</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Add Patient -->
+        <section id="add-patient" class="form-section">
+
+            <h2>➕ Add New Patient</h2>
+
+            <form id="patientForm">
+
+                <div class="form-group">
+                    <label>Patient Name</label>
+                    <input
+                        type="text"
+                        id="patientName"
+                        placeholder="Enter patient name"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label>Age</label>
+                    <input
+                        type="number"
+                        id="patientAge"
+                        placeholder="Enter age"
+                        min="1"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label>Symptoms</label>
+                    <input
+                        type="text"
+                        id="symptoms"
+                        placeholder="Example: Fever, Headache"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label>Priority</label>
+
+                    <select id="priority">
+
+                        <option value="Normal">Normal</option>
+
+                        <option value="High">High</option>
+
+                        <option value="Emergency">
+                            Emergency
+                        </option>
+
+                    </select>
+                </div>
+
+
+                <button type="submit">
+                    Add Patient
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Queue -->
+        <section id="queue" class="queue-section">
+
+            <div class="queue-header">
+
+                <div>
+                    <h2>📋 Patient Queue</h2>
+                    <p>Patients are served according to priority.</p>
+                </div>
+
+                <button id="nextPatientBtn" class="next-btn">
+                    Next Patient →
+                </button>
+
+            </div>
+
+
+            <!-- Search -->
+            <input
+                type="text"
+                id="searchPatient"
+                class="search"
+                placeholder="🔍 Search patient..."
+            >
+
+
+            <!-- Queue Table -->
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Token</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Symptoms</th>
+                            <th>Priority</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="patientTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 MediCare Hospital | Patient Management System
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
